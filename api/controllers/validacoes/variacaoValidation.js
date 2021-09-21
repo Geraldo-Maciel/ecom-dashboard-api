@@ -27,7 +27,7 @@ const VariacaoValidation = {
             preco: Joi.number ().required(), 
             promocao: Joi.number ().required(), 
             entrega: Joi.object ({
-                dimensões: Joi.object ({
+                dimensoes: Joi.object ({
                     alturaCm: Joi.number ().required(), 
                     larguraCm: Joi.number ().required(),
                     profundidadeCm: Joi.number ().required()
@@ -52,7 +52,7 @@ const VariacaoValidation = {
             preco: Joi.number ().optional(), 
             promocao: Joi.number ().optional(), 
             entrega: Joi.object ({
-                dimensões: Joi.object ({
+                dimensoes: Joi.object ({
                     alturaCm: Joi.number ().required(), 
                     larguraCm: Joi.number ().required(),
                     profundidadeCm: Joi.number ().required()

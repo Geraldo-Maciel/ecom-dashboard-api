@@ -9,7 +9,7 @@ class VariacaoController {
     // GET / - index
     async index(req,res,next){
         const { loja, produto } = req.query;
-        console.log(loja, produto)
+//        console.log(loja, produto)
         try {
             const variacoes = await Variacao.find({ loja, produto });
             return res.send({ variacoes });
