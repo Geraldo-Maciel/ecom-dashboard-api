@@ -29,36 +29,3 @@ router.get("/:id/variacoes", Validation(ProdutoValidation.showVariacoes), produt
 router.get("/:id/avaliacoes", Validation(ProdutoValidation.showAvaliacoes), produtoController.showAvaliacoes);
 
 module.exports = router;
-/*
-const router = require("express").Router();
-
-const ProdutoController = require("../../../controllers/ProdutoController");
-
-const { LojaValidation } = require("../../../controllers/validacoes/lojaValidation");
-const validation = require("express-validation");
-const { ProdutoValidation } = require("../../../controllers/validacoes/produtoValidation");
-const auth = require("../../auth");
-const upload = require("../../../config/multer");
-
-const produtoController = new ProdutoController();
-
-// ADMIN
-router.post("/", auth.required, LojaValidation.admin, validation(ProdutoValidation.store), produtoController.store);
-router.put("/:id", auth.required, LojaValidation.admin, validation(ProdutoValidation.update), produtoController.update);
-router.put("/images/:id", auth.required, LojaValidation.admin, validation(ProdutoValidation.updateImages), upload.array("files", 4), produtoController.updateImages);
-router.delete("/:id", auth.required, LojaValidation.admin, validation(ProdutoValidation.remove), produtoController.remove);
-
-// CLIENTES / VISITANTES
-router.get("/", validation(ProdutoValidation.index), produtoController.index);
-router.get("/disponiveis", validation(ProdutoValidation.indexDisponiveis), produtoController.indexDisponiveis);
-router.get("/search/:search", validation(ProdutoValidation.search), produtoController.search);
-router.get("/:id", validation(ProdutoValidation.show), produtoController.show);
-
-// VARIACOES
-router.get("/:id/variacoes", validation(ProdutoValidation.showVariacoes), produtoController.showVariacoes);
-
-// AVALIACOES
-router.get("/:id/avaliacoes", validation(ProdutoValidation.showAvaliacoes), produtoController.showAvaliacoes);
-
-module.exports = router;
-*/

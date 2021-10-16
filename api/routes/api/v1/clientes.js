@@ -28,34 +28,3 @@ router.delete("/:id", auth.required, clienteController.remove);
 
 
 module.exports = router;
-/*
-const router = require("express").Router();
-
-const ClienteController = require("../../../controllers/ClienteController");
-const { LojaValidation } = require("../../../controllers/validacoes/lojaValidation");
-const { ClienteValidation } = require("../../../controllers/validacoes/clienteValidation");
-const validation = require("express-validation");
-const auth = require("../../auth");
-
-const clienteController = new ClienteController();
-
-// ADMIN
-router.get("/", auth.required, LojaValidation.admin, validation(ClienteValidation.index), clienteController.index);
-router.get("/search/:search/pedidos", auth.required, LojaValidation.admin, validation(ClienteValidation.searchPedidos), clienteController.searchPedidos);
-router.get("/search/:search", auth.required, LojaValidation.admin, validation(ClienteValidation.search), clienteController.search);
-router.get("/admin/:id", auth.required, LojaValidation.admin, validation(ClienteValidation.showAdmin), clienteController.showAdmin);
-router.get("/admin/:id/Pedidos", auth.required, LojaValidation.admin, validation(ClienteValidation.showPedidosCliente), clienteController.showPedidosCliente);
-
-//router.put("/admin/:id", auth.required, LojaValidation.admin, ClienteController.removeAdmin);
-
-router.put("/admin/:id", auth.required , LojaValidation.admin, validation(ClienteValidation.updateAdmin), clienteController.updateAdmin);
-
-// CLIENTE
-router.get("/:id", auth.required, validation(ClienteValidation.show), clienteController.show);
-
-router.post("/", validation(ClienteValidation.store), clienteController.store);
-router.put("/:id", auth.required, validation(ClienteValidation.update), clienteController.update);
-router.delete("/:id", auth.required, clienteController.remove);
-
-module.exports = router;
-*/
